@@ -20,8 +20,8 @@ namespace UpworkTask.Console.Jobs
 
         public void ReturnJob(IJob job)
         {
-            // i couldn't find a way to release services with your preferred DI, 
-            // its up to you to google such things
+            var disposable = job as IDisposable;
+            disposable?.Dispose();
         }
     }
 }
